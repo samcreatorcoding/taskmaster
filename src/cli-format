@@ -1,0 +1,6 @@
+user [add <name:str> <tasks:"[task, task...]"> <maxtasks:int>|rem <name:str>|mod <name> [name <name:str>|tasks <tasks:"[task, task...]">|maxtasks <maxtasks:int>]]
+task [add <name:str>|rem <name:str>]
+generate <name:str> (-e <file>) (-o <file>)
+init <file:str> 
+exit <file:str>
+setup <file:str>
