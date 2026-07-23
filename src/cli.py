@@ -193,7 +193,7 @@ def interactive_cli():
 
 def main():
     if nlen(args, 2):
-        parse(args[1:], Caller())
+        iparse(args[1:], Caller())
     else:
         pass
 
