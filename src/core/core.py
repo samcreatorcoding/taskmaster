@@ -82,7 +82,7 @@ class Planning:
         planning = {}
         for d in self.days:
             planning[d.name] = d.plan_day()
-            df = ""
+        df = ""
         if pandas:
             df = DataFrame(planning)
         return planning, str(df)
