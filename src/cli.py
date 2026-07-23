@@ -52,7 +52,7 @@ def helper(context: str = "") -> None:
     elif context == "tr_":
         print("Foutieve argumenten voor 'task rem'.")
         print("Syntax: task rem <name:str>")
-        elif context == "g":
+    elif context == "g":
         print("Foutieve argumenten voor 'generate'.")
         print("Syntax: generate [-e <excel_file:str>] [-o <json_file:str>]")
         print("Voorbeelden:")
