@@ -193,9 +193,9 @@ def interactive_cli():
 
 def main():
     if nlen(args, 2):
-        iparse(args[1:], Caller())
+        interactive_cli()
     else:
-        pass
+        iparse(args[1:], Caller())
 
 if __name__ == "__main__":
     main()
