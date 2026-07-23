@@ -221,6 +221,9 @@ def start_backend() -> tuple[Handler, threading.Thread]:
     return backend, thread
 
 class Caller:
+    def __init__(self):
+        self._b_t = set()
+
     async def _send_to_socket(self, command: str, wait_for_response: bool) -> str|None:
         """Connects with backend and sends command"""
         try:
@@ -250,7 +253,9 @@ class Caller:
 
     async def send_and_forget(self, command: str) -> None:
         """Sends command and continues"""
-        asyncio.create_task(self._send_to_socket(command, wait_for_response=False))
+        task = asyncio.create_task(self._send_to_socket(command, wait_for_response=False))
+        self._b_t.add(task)
+        task.add_done_callback(self._b_t.discard)
 
     async def send_and_wait(self, command: str) -> str:
         """Sends command and awaits answer"""
